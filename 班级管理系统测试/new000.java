@@ -16,14 +16,11 @@ import javax.swing.JButton;
 public class new000 {
  
 	
-	public static final int ALL_NUMBER=30;
+	public static final int ALL_NUMBER=30;									//用户总人数
 	
-	public String[][] MAP=new String[ALL_NUMBER][2];
+	public String[][] MAP=new String[ALL_NUMBER][2];						//用于储存数据加载
 	
 	public static void main(String[] args) {
-		
-		
-		
 		new000 login = new new000();
 		login.initUI();
  
@@ -41,6 +38,7 @@ public class new000 {
 			e.printStackTrace();
 		}
 		
+		//登陆界面
 		javax.swing.JFrame jf=new javax.swing.JFrame();
 		jf.setTitle("登录界面");
 		jf.setSize(340,500);//只对顶级容器有效
@@ -49,7 +47,7 @@ public class new000 {
 		jf.setResizable(false);
  
 		//选择布局类型，定义流式布局的对象,并且设置每个组件之间相隔5cm
-		java.awt.FlowLayout fl=new java.awt.FlowLayout(FlowLayout.CENTER,5,5);
+		java.awt.FlowLayout fl=new java.awt.FlowLayout(FlowLayout.CENTER,0,0);
 		jf.setLayout(fl);//设置顶级容器的布局为流式布局
 		
 		//设置格式大小
@@ -105,14 +103,14 @@ public class new000 {
 	
  
 	
-	public void readData(String file)throws IOException{//将文件之接转换放入Map中								
+	public void readData(String file)throws IOException{			//将文件之接转换放入Map中								
 		//读文件
 		FileReader fr=new FileReader(file);
 		//System.out.println(file);									//汇报读入情况
 		BufferedReader br=new BufferedReader(fr);
 		String str1,line[];
 		String str2;
-		while((str1=br.readLine())!=null) {//文件末尾不允许打空格！！！
+		while((str1=br.readLine())!=null) {							//文件末尾不允许打空格！！！
 			//读入数据
 			String a1=null;					//暂存序列号
 			String a2=null;					//暂存账号
